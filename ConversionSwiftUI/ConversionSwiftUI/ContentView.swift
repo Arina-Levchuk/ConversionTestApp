@@ -16,6 +16,8 @@ struct ContentView: View {
         case days = "Days"
     }
     
+    @FocusState private var valueIsFocused: Bool
+    
     private let conversions = Time.allCases
     @State private var selectedConversionForInput: Time = .seconds
     @State private var selectedConversionForOutput: Time = .minutes
@@ -63,6 +65,8 @@ struct ContentView: View {
                 
                 Section {
                     TextField("Enter a number", value: $valueToConvert, format: .number)
+                        .keyboardType(.decimalPad)
+                        .focused($valueIsFocused)
                 } header: {
                     Text("Value to convert")
                 }
@@ -86,6 +90,14 @@ struct ContentView: View {
             }
             .foregroundColor(.pink)
             .navigationTitle("Time Converter")
+            .toolbar {
+                ToolbarItem(placement: .keyboard) {
+                    Spacer()
+                    Button("Done") {
+                        valueIsFocused = false
+                    }
+                }
+            }
         }
     }
 }
