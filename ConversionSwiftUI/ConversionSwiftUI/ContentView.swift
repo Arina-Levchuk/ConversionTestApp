@@ -8,12 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-//    seconds, minutes, hours, or days
     enum Time: String, CaseIterable {
         case seconds = "Seconds"
         case minutes = "Minutes"
         case hours = "Hours"
         case days = "Days"
+        
+        func getUnitForConversion() -> UnitDuration {
+            switch self {
+            case .seconds:
+                return UnitDuration.seconds
+            case .minutes:
+                return UnitDuration.minutes
+            case .hours:
+                return UnitDuration.hours
+            case .days:
+                return UnitDuration.days
+            }
+        }
     }
     
     @FocusState private var valueIsFocused: Bool
@@ -21,32 +33,13 @@ struct ContentView: View {
     private let conversions = Time.allCases
     @State private var selectedConversionForInput: Time = .seconds
     @State private var selectedConversionForOutput: Time = .minutes
-    @State private var valueToConvert: Double = 0
     
-    var secondsUnit: Double {
-        switch selectedConversionForInput {
-        case .seconds:
-            return valueToConvert
-        case .minutes:
-            return valueToConvert * 60
-        case .hours:
-            return valueToConvert * (60 * 60)
-        case .days:
-            return valueToConvert * (60 * 60 * 24)
-        }
-    }
-    
+    @State private var inputtedValue: Double = 0
+
     private var calculatedValue: Double {
-        switch selectedConversionForOutput {
-        case .seconds:
-            return secondsUnit
-        case .minutes:
-            return secondsUnit / 60
-        case .hours:
-            return secondsUnit / (60 * 60)
-        case .days:
-            return secondsUnit / (60 * 60 * 24)
-        }
+        let valueToConvert = Measurement(value: inputtedValue, unit: selectedConversionForInput.getUnitForConversion())
+        let converted = valueToConvert.converted(to: selectedConversionForOutput.getUnitForConversion())
+        return converted.value
     }
 
     var body: some View {
@@ -64,9 +57,10 @@ struct ContentView: View {
                 }
                 
                 Section {
-                    TextField("Enter a number", value: $valueToConvert, format: .number)
+                    TextField("Enter a number", value: $inputtedValue, format: .number)
                         .keyboardType(.decimalPad)
                         .focused($valueIsFocused)
+                        .foregroundColor(.primary)
                 } header: {
                     Text("Value to convert")
                 }
@@ -84,6 +78,7 @@ struct ContentView: View {
                 
                 Section {
                     Text(calculatedValue, format: .number)
+                        .foregroundColor(.primary)
                 } header: {
                     Text("Result")
                 }
@@ -107,4 +102,10 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
             
     }
+}
+
+extension UnitDuration {
+    static let SecondsPerDay: Double = 86_400
+    
+    static let days = UnitDuration(symbol: "days", converter: UnitConverterLinear(coefficient: SecondsPerDay))
 }
