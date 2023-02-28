@@ -14,7 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8C9CB92C29A8D34000DD92D4 /* ConversionSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConversionSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C9CB92C29A8D34000DD92D4 /* ConversionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConversionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9CB92F29A8D34000DD92D4 /* ConversionSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionSwiftUIApp.swift; sourceTree = "<group>"; };
 		8C9CB93129A8D34000DD92D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8C9CB93329A8D34200DD92D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 		8C9CB92D29A8D34000DD92D4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8C9CB92C29A8D34000DD92D4 /* ConversionSwiftUI.app */,
+				8C9CB92C29A8D34000DD92D4 /* ConversionApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,9 +70,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8C9CB92B29A8D34000DD92D4 /* ConversionSwiftUI */ = {
+		8C9CB92B29A8D34000DD92D4 /* ConversionApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C9CB93A29A8D34200DD92D4 /* Build configuration list for PBXNativeTarget "ConversionSwiftUI" */;
+			buildConfigurationList = 8C9CB93A29A8D34200DD92D4 /* Build configuration list for PBXNativeTarget "ConversionApp" */;
 			buildPhases = (
 				8C9CB92829A8D34000DD92D4 /* Sources */,
 				8C9CB92929A8D34000DD92D4 /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = ConversionSwiftUI;
+			name = ConversionApp;
 			productName = ConversionSwiftUI;
-			productReference = 8C9CB92C29A8D34000DD92D4 /* ConversionSwiftUI.app */;
+			productReference = 8C9CB92C29A8D34000DD92D4 /* ConversionApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8C9CB92729A8D34000DD92D4 /* Build configuration list for PBXProject "ConversionSwiftUI" */;
+			buildConfigurationList = 8C9CB92729A8D34000DD92D4 /* Build configuration list for PBXProject "ConversionApp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8C9CB92B29A8D34000DD92D4 /* ConversionSwiftUI */,
+				8C9CB92B29A8D34000DD92D4 /* ConversionApp */,
 			);
 		};
 /* End PBXProject section */
@@ -320,7 +320,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8C9CB92729A8D34000DD92D4 /* Build configuration list for PBXProject "ConversionSwiftUI" */ = {
+		8C9CB92729A8D34000DD92D4 /* Build configuration list for PBXProject "ConversionApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8C9CB93829A8D34200DD92D4 /* Debug */,
@@ -329,7 +329,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C9CB93A29A8D34200DD92D4 /* Build configuration list for PBXNativeTarget "ConversionSwiftUI" */ = {
+		8C9CB93A29A8D34200DD92D4 /* Build configuration list for PBXNativeTarget "ConversionApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8C9CB93B29A8D34200DD92D4 /* Debug */,
